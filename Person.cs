@@ -38,5 +38,6 @@ namespace AddressBookProgram
             contacts.Email = Console.ReadLine();
             person.Add(contacts);
         }
+
     }
 }

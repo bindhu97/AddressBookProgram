@@ -6,7 +6,7 @@
         public static void Main(string[] args)
         {
             AddressBookProgram.Person.CreateContacts();
-
+            AddressBookProgram.Person.editContact();
         }
     }
 }

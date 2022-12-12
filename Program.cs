@@ -13,7 +13,8 @@
                     "1) Find the Create Contacts\n" +
                     "2) Find the Display of Contacts\n" +
                     "3) Find the edit contacts\n" +
-                    "4) Find the delete contacts\n");
+                    "4) Find the delete contacts\n" + 
+                    "5) Find the ability to add multiple Person\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -30,7 +31,12 @@
                         break;
 
                     case 4:
-                        Person.DeleteContact();
+                        string number = Console.ReadLine();
+                        Person.DeleteContact(number);
+                        break;
+
+                    case 5:
+                        Person.AddContact();
                         break;
                     default:
                         Console.WriteLine("Choose valid option");

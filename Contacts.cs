@@ -16,10 +16,5 @@ namespace AddressBookProgram
         public int Zipcode { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
-
-        internal void Remove(List<Contacts> person)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

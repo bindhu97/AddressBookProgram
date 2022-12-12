@@ -40,7 +40,7 @@ namespace AddressBookProgram
         }
         public static void Display()
         {
-            foreach (var data in person) 
+            foreach (var data in person)
             {
                 Console.WriteLine();
                 Console.WriteLine("1.FirstName: " + data.FName + "2.LastName: " + data.LName + "3.Address: " + data.Address + "4.City: " + data.City + "5.State: " + data.State + "6.Zipcode: " + data.Zipcode + "7.PhoneNumber: " + data.PhoneNumber);
@@ -113,16 +113,20 @@ namespace AddressBookProgram
             Contacts contacts = new Contacts();
 
             Console.WriteLine("Enter the First Name of the Person to be deleted: ");
+            string Remove = Console.ReadLine();
             string name = Console.ReadLine();
             foreach (var data in person)
             {
                 if (person.Contains(data))
                 {
-                    if (data.FName == name)
+                    if (data.FName.ToUpper() == Remove.ToUpper())
                     {
-                        Console.WriteLine();
                         person.Remove(contacts);
-                        return;
+                        Console.WriteLine("Contact is deleted");
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Contact is not present");
                     }
                 }
             }

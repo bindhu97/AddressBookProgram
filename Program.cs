@@ -13,7 +13,10 @@
                     "1) Find the Create Contacts\n" +
                     "2) Find the Display of Contacts\n" +
                     "3) Find the edit contacts\n" +
-                    "4) Find the delete contacts\n");
+                    "4) Find the delete contacts\n" +
+                    "5) Ability to add Multiple person in AddressBook\n" +
+                    "6) Ability to add Multiple AddressBook using Dictionary\n" +
+                    "7) Find the DisplayList of Dictionary\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -34,6 +37,18 @@
                         Console.WriteLine("Enter name to delete the record");
                         string name = Console.ReadLine();
                         Person.DeleteContact(name);
+                        break;
+
+                        case 5:
+                            Person.AddMultipleContacts();
+                        break;
+
+                        case 6:
+                            Person.NewUser();
+                        break;
+
+                        case 7:
+                            Person.DisplayList();
                         break;
 
                     default:

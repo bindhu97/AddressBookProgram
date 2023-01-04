@@ -11,9 +11,6 @@ namespace AddressBookProgram
     {
 
         public static List<Contacts> person = new List<Contacts>();
-
-        public static object Remove { get; private set; }
-
         public static void CreateContacts()
         {
             Contacts contacts = new Contacts();
@@ -124,44 +121,6 @@ namespace AddressBookProgram
                 }
             }
             person.Remove(contacts);
-        }
-        public static void AddContact()
-        {
-            Contacts contacts = new Contacts();
-            Console.WriteLine("Please confirm how much contact you want to create:");
-            int contactsCount = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 1; i <= contactsCount; i++)
-            {
-                Console.WriteLine("Enter details for " + i + " Contact");
-
-                Console.WriteLine("Enter FirstName: ");
-                contacts.FName = Console.ReadLine();
-
-                Console.WriteLine("Enter LastName: ");
-                contacts.LName = Console.ReadLine();
-
-                Console.WriteLine("Enter Adress: ");
-                contacts.Address = Console.ReadLine();
-
-                Console.WriteLine("Enter City: ");
-                contacts.City = Console.ReadLine();
-
-                Console.WriteLine("Enter State: ");
-                contacts.State = Console.ReadLine();
-
-                Console.WriteLine("Enter Zipcode: ");
-                contacts.Zipcode = (int)Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Phone Number: ");
-                contacts.PhoneNumber = (int)Convert.ToInt64(Console.ReadLine());
-
-                Console.WriteLine("Enter EmailId: ");
-                contacts.Email = Console.ReadLine();
-
-                person.Add(contacts);
-                Console.WriteLine("Contact added Successfully....");
-            }
         }
     }
 }

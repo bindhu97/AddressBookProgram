@@ -29,7 +29,9 @@ namespace AddressBookProgram
                     "11) Ability to count Person in City or State\n" +
                     "12) Ability to Sort the Entries in Address Book\n" +
                     "13) Ability to Sort the Entry by City Name\n" +
-                    "14) Ability to Sort the Entry by Zipcode\n");
+                    "14) Ability to Sort the Entry by Zipcode\n" +
+                    "15) Ability to Read FileIO in AddressBook\n" +
+                    "16) Ability to ReadAllLines\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -90,6 +92,14 @@ namespace AddressBookProgram
 
                     case 14:
                         Person.SortbyZipcode();
+                        break;
+
+                        case 15:
+                        AddressBookFileIO.FileExists();
+                        break;
+
+                        case 16:
+                        AddressBookFileIO.ReadAllLines();
                         break;
 
                     default:

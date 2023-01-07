@@ -27,7 +27,9 @@ namespace AddressBookProgram
                     "9) Ability to search Person in a City or State in Address Book\n" +
                     "10) Ability to view Person by City or State\n" +
                     "11) Ability to count Person in City or State\n" +
-                    "12) Ability to Sort the Entries in Address Book\n");
+                    "12) Ability to Sort the Entries in Address Book\n" +
+                    "13) Ability to Sort the Entry by City Name\n" +
+                    "14) Ability to Sort the Entry by Zipcode\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -80,6 +82,14 @@ namespace AddressBookProgram
 
                         case 12:
                             Person.SortPersonName();
+                        break;
+
+                        case 13:
+                        Person.SortbyCityName();
+                        break;
+
+                        case 14:
+                        Person.SortbyZipcode();
                         break;
 
                     default:

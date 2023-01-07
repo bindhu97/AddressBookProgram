@@ -10,9 +10,6 @@ namespace AddressBookProgram
 {
     public class Person
     {
-
-        public static List<Contacts> person = new List<Contacts>();
-
         public static void CreateContacts()
         {
             Contacts contacts = new Contacts();
@@ -40,8 +37,6 @@ namespace AddressBookProgram
 
             Console.WriteLine("Enter E-mail: ");
             contacts.Email = Console.ReadLine();
-
-            person.Add(contacts);
         }
     }
 }

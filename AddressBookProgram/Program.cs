@@ -26,7 +26,8 @@ namespace AddressBookProgram
                     "8) Ability to ensure there is no Duplicate entry of same person\n" +
                     "9) Ability to search Person in a City or State in Address Book\n" +
                     "10) Ability to view Person by City or State\n" +
-                    "11) Ability to count Person in City or State\n");
+                    "11) Ability to count Person in City or State\n" +
+                    "12) Ability to Sort the Entries in Address Book\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -77,6 +78,9 @@ namespace AddressBookProgram
                         Person.CountPersonByCity();
                         break;
 
+                        case 12:
+                        Person.SortPersonName();
+                        break;
 
                     default:
                         Console.WriteLine("Choose valid option");

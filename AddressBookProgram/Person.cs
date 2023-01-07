@@ -225,5 +225,16 @@ namespace AddressBookProgram
                 Console.WriteLine("No of contacts {0} in city {1}", count, cityname);
             }
         }
+        public static void SortPersonName()
+        {
+            foreach (var items in person.OrderBy(e => e.FName))
+            {
+                Console.WriteLine("First Name: " + items.FName);
+                Console.WriteLine("Last Name: " + items.LName);
+                Console.WriteLine("City : " + items.City);
+                Console.WriteLine("Zip : " + items.Zipcode);
+                Console.WriteLine("Phone Number: " + items.PhoneNumber);
+            }
+        }
     }
 }

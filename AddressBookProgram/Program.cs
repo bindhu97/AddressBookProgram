@@ -20,10 +20,11 @@ namespace AddressBookProgram
                     "2) Find the Display of Contacts\n" +
                     "3) Find the edit contacts\n" +
                     "4) Find the delete contacts\n" +
-                   "5) Ability to add Multiple person in AddressBook\n" +
+                    "5) Ability to add Multiple person in AddressBook\n" +
                     "6) Ability to add Multiple AddressBook using Dictionary\n" +
                     "7) Find the DisplayList of Dictionary\n" +
-                    "8) Ability to ensure there is no Duplicate entry of same person\n");
+                    "8) Ability to ensure there is no Duplicate entry of same person\n" +
+                    "9) Ability to search Person in a City or State in Address Book\n"); ;
 
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
@@ -61,6 +62,10 @@ namespace AddressBookProgram
 
                     case 8:
                         Person.DuplicateContact();
+                        break;
+
+                    case 9:
+                        Person.SearchPersonByCity();
                         break;
 
 

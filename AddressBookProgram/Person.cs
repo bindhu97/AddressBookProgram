@@ -236,5 +236,27 @@ namespace AddressBookProgram
                 Console.WriteLine("Phone Number: " + items.PhoneNumber);
             }
         }
+        public static void SortbyCityName()
+        {
+            foreach (var items in person.OrderBy(e => e.City))
+            {
+                Console.WriteLine("First Name: " + items.FName);
+                Console.WriteLine("Last Name: " + items.LName);
+                Console.WriteLine("City : " + items.City);
+                Console.WriteLine("Zip : " + items.Zipcode);
+                Console.WriteLine("Phone Number: " + items.PhoneNumber);
+            }
+        }
+        public static void SortbyZipcode()
+        {
+            foreach (var items in person.OrderBy(e => e.Zipcode))
+            {
+                Console.WriteLine("First Name: " + items.FName);
+                Console.WriteLine("Last Name: " + items.LName);
+                Console.WriteLine("City : " + items.City);
+                Console.WriteLine("Zip : " + items.Zipcode);
+                Console.WriteLine("Phone Number: " + items.PhoneNumber);
+            }
+        }
     }
 }

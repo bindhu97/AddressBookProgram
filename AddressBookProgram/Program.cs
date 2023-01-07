@@ -19,7 +19,8 @@ namespace AddressBookProgram
                     "1) Find the Create Contacts\n" +
                     "2) Find the Display of Contacts\n" +
                     "3) Find the edit contacts\n" +
-                    "4) Find the delete contacts\n");
+                    "4) Find the delete contacts\n" +
+                    "5) Ability to add Multiple person in AddressBook\n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
@@ -41,6 +42,10 @@ namespace AddressBookProgram
                         Console.WriteLine("Enter name to delete the record");
                         string name = Console.ReadLine();
                         Person.DeleteContact(name);
+                        break;
+
+                    case 5:
+                        Person.AddMultipleContacts();
                         break;
 
                     default:

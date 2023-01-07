@@ -25,7 +25,8 @@ namespace AddressBookProgram
                     "7) Find the DisplayList of Dictionary\n" +
                     "8) Ability to ensure there is no Duplicate entry of same person\n" +
                     "9) Ability to search Person in a City or State in Address Book\n" +
-                    "10) Ability to view Person by City or State\n");
+                    "10) Ability to view Person by City or State\n" +
+                    "11) Ability to count Person in City or State\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -70,6 +71,10 @@ namespace AddressBookProgram
 
                     case 10:
                         Person.ViewPersonsByCity();
+                        break;
+
+                        case 11:
+                        Person.CountPersonByCity();
                         break;
 
                     default:

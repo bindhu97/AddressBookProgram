@@ -1,0 +1,7 @@
+﻿First Name :Bindhu
+Last Name : Shree
+City : Bangalore
+State : Karnataka
+Email : Bindu!97c@gmail.com
+Zip : 562123
+Phone Number : 9876543210

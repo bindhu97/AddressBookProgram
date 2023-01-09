@@ -1,7 +1,7 @@
 ﻿using CsvHelper;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Formats.Asn1;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace AddressBookProgram
 {
-    public class AddressBookCSVFile
+    public class AddressBookJSONFile
     {
-        public static string importfilePath = @"C:\Users\91973\source\repos\AddressBookProgram\AddressBookProgram\Import.csv";
-        public static string exportfilePath = @"C:\Users\91973\source\repos\AddressBookProgram\AddressBookProgram\Export.csv";
-        public static void ImplementJSONToCSV()
+        public static string importpath = @"C:\Users\91973\source\repos\AddressBookProgram\AddressBookProgram\Import.csv";
+        public static string exportpath = @"C:\Users\91973\source\repos\AddressBookProgram\AddressBookProgram\Export.json";
+        public static void ImplementCSVtoJSON()
         {
-            using (var reader = new StreamReader(importfilePath))
+            using (var reader = new StreamReader(importpath))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 var records = csv.GetRecords<Person>().ToList();
-                Console.WriteLine("Read Data from csvFile");
+                Console.WriteLine("Read Data successfully from import.csv file and here data are");
                 foreach (var data in Person.person)
                 {
                     Console.Write("\n" + data.FName);
@@ -32,10 +32,12 @@ namespace AddressBookProgram
                     Console.Write("\n" + data.Email);
                     Console.Write("\n");
                 }
-                using (var writer = new StreamWriter(exportfilePath))
-                using (var csvImport = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                Console.WriteLine("Read data from csv file Write data to Json File");
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(exportpath))
+                using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    csvImport.WriteRecords(records);
+                    serializer.Serialize(writer, records);
                 }
             }
         }

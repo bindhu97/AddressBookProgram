@@ -34,7 +34,8 @@ namespace AddressBookProgram
                     "16) Ability to ReadAllLines\n" +
                     "17) Ability to Read StreamReader\n" +
                     "18) Ability to Write in IO File\n" +
-                    "19) Ability to Implement JSON TO CSV File\n");
+                    "19) Ability to Implement JSON TO CSV File\n" +
+                    "20) Ability to Implement CSV to JSON File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -115,6 +116,10 @@ namespace AddressBookProgram
 
                         case 19:
                         AddressBookCSVFile.ImplementJSONToCSV();
+                        break;
+
+                        case 20:
+                            AddressBookJSONFile.ImplementCSVtoJSON();
                         break;
 
                     default:

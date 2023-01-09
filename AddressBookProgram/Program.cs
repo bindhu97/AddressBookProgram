@@ -31,7 +31,10 @@ namespace AddressBookProgram
                     "13) Ability to Sort the Entry by City Name\n" +
                     "14) Ability to Sort the Entry by Zipcode\n" +
                     "15) Ability to Read FileIO in AddressBook\n" +
-                    "16) Ability to ReadAllLines\n");
+                    "16) Ability to ReadAllLines\n" +
+                    "17) Ability to Read StreamReader\n" +
+                    "18) Ability to Write in IO File\n" +
+                    "19) Ability to Implement JSON TO CSV File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -100,6 +103,18 @@ namespace AddressBookProgram
 
                     case 16:
                         AddressBookFileIO.ReadAllLines();
+                        break;
+
+                    case 17:
+                        AddressBookFileIO.FileStreamReader();
+                        break;
+
+                        case 18:
+                        AddressBookFileIO.WriterPersonsContactsFile();
+                        break;
+
+                        case 19:
+                        AddressBookCSVFile.ImplementJSONToCSV();
                         break;
 
                     default:

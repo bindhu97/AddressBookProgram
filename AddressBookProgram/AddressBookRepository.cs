@@ -34,15 +34,41 @@ namespace AddressBookProgram
                             FName = Convert.ToString(dr["FirstName"]),
                             LName = Convert.ToString(dr["LastName"]),
                             Address = Convert.ToString(dr["Address"]),
+                            PhoneNumber = Convert.ToInt32(dr["PhoneNumber"]),
                             City = Convert.ToString(dr["City"]),
                             State = Convert.ToString(dr["State"]),
                             Zipcode = Convert.ToInt32(dr["ZipCode"]),
-                            PhoneNumber = Convert.ToInt32(dr["PhoneNumber"]),
                             Email = Convert.ToString(dr["EmailAddress"])
                         });
                         count++;
                     }
                     return count;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public int UpdatePresoninAddressBook(Contacts model)
+        {
+            try
+            {
+                using (this.sqlconnection)
+                {
+                    this.sqlconnection.Open();
+                    SqlCommand command = new SqlCommand("spUpdatePerson", this.sqlconnection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", model.ID);
+                    command.Parameters.AddWithValue("@Address", model.Address);
+                    command.Parameters.AddWithValue("@PhoneNumber", model.PhoneNumber);
+                    int result = command.ExecuteNonQuery();
+                    this.sqlconnection.Close();
+                    if (result >= 1)
+                    {
+                        Console.WriteLine("Person Updated Successfully");
+                    }
+                    return result;
                 }
             }
             catch (Exception ex)

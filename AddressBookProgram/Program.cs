@@ -8,9 +8,10 @@ namespace AddressBookProgram
 {
     internal class Program
     {
-        //public static List<Contacts> Person = new List<Contacts>();
         public static void Main(string[] args)
         {
+            Console.WriteLine("Welcome To Address Book Problem");
+            //Object of persondetials class is created
             Person person = new Person();
             while (true)
             {
@@ -37,7 +38,6 @@ namespace AddressBookProgram
                     "19) Ability to Implement JSON TO CSV File\n" +
                     "20) Ability to Implement CSV to JSON File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
-                int count = 0;
                 switch (option)
                 {
                     case 1:

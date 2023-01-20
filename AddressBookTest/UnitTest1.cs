@@ -33,5 +33,14 @@ namespace AddressBookTest
             int count = repository.GetPersonDate(model);
             Assert.AreEqual(2, count);
         }
+        [Test]
+        public void GetpersonbyCityName()
+        {
+            Contacts model = new Contacts();
+            model.City = "Bangalore";
+            AddressBookRepository repository = new AddressBookRepository();
+            int count = repository.GetPersonByCity(model);
+            Assert.AreEqual(1, count);
+        }
     }
 }

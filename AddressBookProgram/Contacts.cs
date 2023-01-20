@@ -17,5 +17,6 @@ namespace AddressBookProgram
         public string State { get; set; }
         public int Zipcode { get; set; }
         public string Email { get; set; }
+        public string DateAdded { get; set; }
     }
 }

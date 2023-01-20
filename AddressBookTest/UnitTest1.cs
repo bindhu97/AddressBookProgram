@@ -24,5 +24,14 @@ namespace AddressBookTest
             int result = repository.UpdatePresoninAddressBook(model);
             Assert.AreEqual(1, result);
         }
+        [Test]
+        public void GetpersonbyDate()
+        {
+            Contacts model = new Contacts();
+            model.DateAdded = "17-01-2023";
+            AddressBookRepository repository = new AddressBookRepository();
+            int count = repository.GetPersonDate(model);
+            Assert.AreEqual(2, count);
+        }
     }
 }

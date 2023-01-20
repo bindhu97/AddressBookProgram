@@ -42,5 +42,24 @@ namespace AddressBookTest
             int count = repository.GetPersonByCity(model);
             Assert.AreEqual(1, count);
         }
+        [Test]
+        public void AddpersonInDatabase()
+        {
+            Contacts model = new Contacts
+            {
+                FName = "Parnika",
+                LName = "Rao",
+                Address = "Dodbele Road",
+                PhoneNumber = "988888888",
+                Email = "Pari97@gmail.com",
+                City = "Kengeri",
+                State = "Karnataka",
+                Zipcode = 123456,
+                DateAdded = "27-05-2021"
+            };
+            AddressBookRepository repository = new AddressBookRepository();
+            int result = repository.AddPresoninAddressBook(model);
+            Assert.AreEqual(1, result);
+        }
     }
 }
